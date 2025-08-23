@@ -1,0 +1,21 @@
+public class StaticMethodDemo {
+
+    // A static method
+    public static void displayMessage() {
+        System.out.println("Hello! This is a static method.");
+    }
+
+    // Another static method with arguments
+    public static int square(int num) {
+        return num * num;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Calling static methods using class name
+        StaticMethodDemo.displayMessage();
+
+        int result = StaticMethodDemo.square(5);
+        System.out.println("Square of 5 = " + result);
+    }
+}

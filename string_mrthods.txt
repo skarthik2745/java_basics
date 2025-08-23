@@ -1,0 +1,79 @@
+public class Main {
+    public static void main(String[] args) {
+        // Original extracted code
+        String a = "Joes";
+        String b = "joes";
+        
+        System.out.println("B : " + b);
+        System.out.println("A HashCode: " + a.hashCode());
+        System.out.println("B HashCode: " + b.hashCode());
+        System.out.println("Equals : " + a.equals(b));
+        System.out.println("Equals Ignore Case: " + a.equalsIgnoreCase(b));
+        System.out.println("Length: " + a.length());
+        System.out.println("CharAt: " + a.charAt(0));
+        System.out.println("Uppercase: " + a.toUpperCase());
+        System.out.println("Lowercase: " + a.toLowerCase());
+        System.out.println("Replace: " + a.replace("Joes", "Stanley"));
+        
+        // Additional string functions and methods
+        System.out.println("\n--- Additional String Operations ---");
+        
+        // String concatenation
+        String c = a.concat(" ").concat(b);
+        System.out.println("Concatenation: " + c);
+        
+        // String comparison
+        System.out.println("CompareTo: " + a.compareTo(b));
+        System.out.println("CompareTo Ignore Case: " + a.compareToIgnoreCase(b));
+        
+        // Substring operations
+        System.out.println("Substring (0,2): " + a.substring(0, 2));
+        System.out.println("Substring (2): " + a.substring(2));
+        
+        // String searching
+        System.out.println("Contains 'oe': " + a.contains("oe"));
+        System.out.println("Index of 'e': " + a.indexOf('e'));
+        System.out.println("Last index of 'e': " + a.lastIndexOf('e'));
+        System.out.println("StartsWith 'J': " + a.startsWith("J"));
+        System.out.println("EndsWith 's': " + a.endsWith("s"));
+        
+        // String transformation
+        System.out.println("Trim: '" + "   Hello World   ".trim() + "'");
+        System.out.println("Value of: " + String.valueOf(123));
+        
+        // String splitting
+        String sample = "Java,Python,JavaScript";
+        String[] languages = sample.split(",");
+        System.out.println("Split result: ");
+        for (String lang : languages) {
+            System.out.println("  - " + lang);
+        }
+        
+        // String formatting
+        String formatted = String.format("Name: %s, Length: %d", a, a.length());
+        System.out.println("Formatted string: " + formatted);
+        
+        // String joining (Java 8+)
+        String joined = String.join(" | ", "Java", "Python", "C++");
+        System.out.println("Joined string: " + joined);
+        
+        // Character array conversion
+        char[] charArray = a.toCharArray();
+        System.out.print("Character array: ");
+        for (char ch : charArray) {
+            System.out.print(ch + " ");
+        }
+        System.out.println();
+        
+        // String repetition (Java 11+)
+        String repeated = a.repeat(3);
+        System.out.println("Repeated string: " + repeated);
+        
+        // String blank check (Java 11+)
+        System.out.println("Is blank: " + "   ".isBlank());
+        System.out.println("Is empty: " + "".isEmpty());
+        
+        // String case transformation (Java 12+)
+        System.out.println("Indented string:\n" + a.indent(4));
+    }
+}

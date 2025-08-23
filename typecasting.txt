@@ -1,0 +1,120 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("TYPE CASTING IN JAVA");
+        System.out.println("=====================");
+        System.out.println();
+        
+        // 1. IMPLICIT CASTING (Widening Conversion)
+        System.out.println("1. IMPLICIT CASTING (Widening - Automatic)");
+        System.out.println("------------------------------------------");
+        
+        int intValue = 100;
+        long longValue = intValue; // int → long (automatic)
+        float floatValue = longValue; // long → float (automatic)
+        double doubleValue = floatValue; // float → double (automatic)
+        
+        System.out.println("int → long: " + intValue + " → " + longValue);
+        System.out.println("long → float: " + longValue + " → " + floatValue);
+        System.out.println("float → double: " + floatValue + " → " + doubleValue);
+        
+        char charValue = 'A';
+        int charToInt = charValue; // char → int (automatic)
+        System.out.println("char → int: '" + charValue + "' → " + charToInt);
+        System.out.println();
+        
+        // 2. EXPLICIT CASTING (Narrowing Conversion)
+        System.out.println("2. EXPLICIT CASTING (Narrowing - Manual)");
+        System.out.println("----------------------------------------");
+        
+        double largeDouble = 123.456;
+        int doubleToInt = (int) largeDouble; // double → int (explicit)
+        System.out.println("double → int: " + largeDouble + " → " + doubleToInt);
+        
+        long largeLong = 300L;
+        byte longToByte = (byte) largeLong; // long → byte (explicit)
+        System.out.println("long → byte: " + largeLong + " → " + longToByte);
+        
+        float largeFloat = 123.78f;
+        short floatToShort = (short) largeFloat; // float → short (explicit)
+        System.out.println("float → short: " + largeFloat + " → " + floatToShort);
+        System.out.println();
+        
+        
+        // 4. CHAR AND INT CONVERSIONS
+        System.out.println("4. CHAR AND INT CONVERSIONS");
+        System.out.println("---------------------------");
+        
+        char letter = 'B';
+        int letterCode = (int) letter; // char → int
+        System.out.println("char → int: '" + letter + "' → " + letterCode);
+        
+        int code = 67;
+        char fromCode = (char) code; // int → char
+        System.out.println("int → char: " + code + " → '" + fromCode + "'");
+        System.out.println();
+        
+        // 5. TYPE PROMOTION IN EXPRESSIONS
+        System.out.println("5. TYPE PROMOTION IN EXPRESSIONS");
+        System.out.println("--------------------------------");
+        
+        byte byteNum = 10;
+        short shortNum = 20;
+        int intNum = 30;
+        long longNum = 40L;
+        float floatNum = 5.5f;
+        double doubleNum = 6.6;
+        
+        // Result is promoted to the largest type in expression
+        double result1 = byteNum + doubleNum; // byte + double → double
+        float result2 = intNum + floatNum; // int + float → float
+        long result3 = shortNum + longNum; // short + long → long
+        int result4 = byteNum + shortNum; // byte + short → int
+        
+        System.out.println("byte + double: " + byteNum + " + " + doubleNum + " = " + result1 + " (double)");
+        System.out.println("int + float: " + intNum + " + " + floatNum + " = " + result2 + " (float)");
+        System.out.println("short + long: " + shortNum + " + " + longNum + " = " + result3 + " (long)");
+        System.out.println("byte + short: " + byteNum + " + " + shortNum + " = " + result4 + " (int)");
+        System.out.println();
+        
+        // 6. CASTING IN ARITHMETIC OPERATIONS
+        System.out.println("6. CASTING IN ARITHMETIC OPERATIONS");
+        System.out.println("-----------------------------------");
+        
+        int x = 10;
+        int y = 3;
+        
+        // Without casting - integer division
+        double division1 = x / y;
+        System.out.println("Without casting: " + x + " / " + y + " = " + division1);
+        
+        // With casting - proper division
+        double division2 = (double) x / y;
+        System.out.println("With casting: (double)" + x + " / " + y + " = " + division2);
+        System.out.println();
+        
+       
+        
+        
+        // 8. FINAL EXAMPLE: COMPREHENSIVE CASTING
+        System.out.println("8. COMPREHENSIVE CASTING EXAMPLE");
+        System.out.println("--------------------------------");
+        
+        double originalValue = 97.5;
+        System.out.println("Original double value: " + originalValue);
+        
+        // Cast to various types
+        float toFloat = (float) originalValue;
+        long toLong = (long) originalValue;
+        int toInt = (int) originalValue;
+        short toShort = (short) originalValue;
+        byte toByte = (byte) originalValue;
+        char toChar = (char) originalValue;
+        
+        System.out.println("double → float: " + originalValue + " → " + toFloat);
+        System.out.println("double → long: " + originalValue + " → " + toLong);
+        System.out.println("double → int: " + originalValue + " → " + toInt);
+        System.out.println("double → short: " + originalValue + " → " + toShort);
+        System.out.println("double → byte: " + originalValue + " → " + toByte);
+        System.out.println("double → char: " + originalValue + " → '" + toChar + "'");
+    }
+}

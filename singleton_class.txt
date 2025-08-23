@@ -1,0 +1,43 @@
+// Singleton Class
+class Singleton {
+    // Step 1: Create a private static instance of the class
+    private static Singleton singleInstance = null;
+
+    // Step 2: Private constructor so no other class can create object
+    private Singleton() {
+        System.out.println("Singleton instance created!");
+    }
+
+    // Step 3: Public static method to provide the single instance
+    public static Singleton getInstance() {
+        if (singleInstance == null) {
+            singleInstance = new Singleton();
+        }
+        return singleInstance;
+    }
+
+    // Example method
+    public void showMessage() {
+        System.out.println("Hello from Singleton class!");
+    }
+}
+
+// Main Class
+public class SingletonDemo {
+    public static void main(String[] args) {
+        // Trying to create multiple objects
+        Singleton obj1 = Singleton.getInstance();
+        Singleton obj2 = Singleton.getInstance();
+
+        obj1.showMessage();
+                obj2.showMessage();
+
+
+        // Checking if both objects are same
+        if (obj1 == obj2) {
+            System.out.println("Both references point to the SAME object.");
+        } else {
+            System.out.println("Different objects created.");
+        }
+    }
+}

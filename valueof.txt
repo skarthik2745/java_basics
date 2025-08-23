@@ -1,0 +1,49 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // 1. Converting Primitives
+        int num = 42;
+        double price = 19.99;
+        boolean isJavaFun = true;
+        char letter = 'A';
+
+        String strNum = String.valueOf(num);      // "42"
+        String strPrice = String.valueOf(price);  // "19.99"
+        String strBool = String.valueOf(isJavaFun); // "true"
+        String strChar = String.valueOf(letter);    // "A"
+
+        System.out.println("Integer: " + strNum);
+        System.out.println("Double: " + strPrice);
+        System.out.println("Boolean: " + strBool);
+        System.out.println("Char: " + strChar);
+
+        // 2. Converting Objects and handling NULL
+        Object obj = null;
+
+        // Using valueOf() - SAFE
+        String strFromValueOf = String.valueOf(obj);
+        System.out.println("String.valueOf(null): '" + strFromValueOf + "'"); // Prints 'null'
+
+        // Using toString() - UNSAFE (Throws NullPointerException)
+        try {
+            String strFromToString = obj.toString(); // This line will crash!
+            System.out.println(strFromToString);
+        } catch (NullPointerException e) {
+            System.out.println("Cannot call .toString() on null: " + e);
+        }
+
+        // 3. Using with character arrays
+        char[] helloArray = {'H', 'e', 'l', 'l', 'o'};
+        String helloString = String.valueOf(helloArray);
+        System.out.println(helloString); // "Hello"
+
+        // 4. Comparison with concatenation
+        // These two lines are functionally identical for non-null objects:
+        String s1 = "" + num; // Internally, the compiler uses String.valueOf()
+        String s2 = String.valueOf(num);
+
+        System.out.println("Concatenation result: " + s1);
+        System.out.println("valueOf result: " + s2);
+        System.out.println("Are they equal? " + s1.equals(s2)); // true
+    }
+}

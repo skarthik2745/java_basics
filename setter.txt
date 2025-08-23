@@ -1,0 +1,42 @@
+// Class with private fields, getters, and setters
+class Student {
+    // Private variable (cannot be accessed directly outside the class)
+    private String name;
+    private int age;
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+}
+
+// Main class to test
+public class GetterSetterDemo {
+    public static void main(String[] args) {
+        // Create object
+        Student s1 = new Student();
+
+        // Use setter methods to set values
+        s1.setName("Karthik");
+        s1.setAge(20);
+
+        // Use getter methods to get values
+        System.out.println("Student Name: " + s1.getName());
+        System.out.println("Student Age: " + s1.getAge());
+    }
+}

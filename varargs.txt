@@ -1,0 +1,33 @@
+// Example of VarArgs in Java
+class VarArgsExample {
+
+    // Method with VarArgs to calculate sum
+    int sum(int... numbers) {   // 'int... numbers' means any number of int values
+        int total = 0;
+        for (int num : numbers) {
+            total += num;
+        }
+        return total;
+    }
+
+    // Method with VarArgs for strings
+    void displayNames(String... names) {
+        System.out.println("Names:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+
+    public static void main(String[] args) {
+        VarArgsExample obj = new VarArgsExample();
+
+        // Calling sum() with different number of arguments
+        System.out.println("Sum of 10, 20 = " + obj.sum(10, 20));
+        System.out.println("Sum of 1, 2, 3, 4, 5 = " + obj.sum(1, 2, 3, 4, 5));
+        System.out.println("Sum with no arguments = " + obj.sum());
+
+        // Calling displayNames() with different number of arguments
+        obj.displayNames("Karthik", "Arun", "Priya");
+        obj.displayNames("OnlyOneName");
+    }
+}

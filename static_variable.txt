@@ -1,0 +1,43 @@
+// Static Variables and Static Methods Example
+class staticTest {
+    // Static variable (shared by all objects of the class)
+    static int a = 10;
+
+    // Instance variable (separate copy for each object)
+    int b = 20;
+
+    // Instance method - can access both static and non-static members
+    void show() {
+        System.out.println("A : " + a + "   B : " + b);
+    }
+
+    // Static method - can access only static members directly
+    static void display() {
+        System.out.println("A : " + a);
+    }
+}
+
+public class stat_vari_methods {
+    public static void main(String args[]) {
+        // Create first object
+        staticTest o1 = new staticTest();
+        o1.show();   // Shows default values (a=10, b=20)
+
+        // Create second object
+        staticTest o2 = new staticTest();
+
+        // Changing non-static variable b using o2
+        o2.b = 100;
+
+        // Changing static variable a using class name (shared across all objects)
+        staticTest.a = 200;
+
+        // Show values using o2
+        o2.show();
+
+        // Show values using o1 (notice that static 'a' is updated for o1 also)
+        o1.show();
+        
+        staticTest.display();
+    }
+}

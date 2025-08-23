@@ -1,0 +1,41 @@
+public class MethodTypesDemo {
+
+    // 1. With arguments and with return type
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // 2. With arguments and without return type
+    void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    // 3. Without arguments and with return type
+    int getRandomNumber() {
+        return (int)(Math.random() * 100); // returns a random number
+    }
+
+    // 4. Without arguments and without return type
+    void displayMessage() {
+        System.out.println("This is a message from a method with no arguments and no return type.");
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        MethodTypesDemo obj = new MethodTypesDemo();
+
+        // 1. With arguments and with return type
+        int sum = obj.add(10, 20);
+        System.out.println("Sum = " + sum);
+
+        // 2. With arguments and without return type
+        obj.greet("Karthik");
+
+        // 3. Without arguments and with return type
+        int random = obj.getRandomNumber();
+        System.out.println("Random number = " + random);
+
+        // 4. Without arguments and without return type
+        obj.displayMessage();
+    }
+}

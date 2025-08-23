@@ -1,0 +1,64 @@
+// Class with all types of constructors + overloading
+class Student {
+    private String name;
+    private int age;
+    private String dept;
+
+    // 1. No-argument constructor
+    public Student() {
+        System.out.println("No-argument constructor called!");
+        name = "Unknown";
+        age = 0;
+        dept = "Not Assigned";
+    }
+
+    // 2. Parameterized constructor (with 2 parameters)
+    public Student(String n, int a) {
+        System.out.println("Parameterized constructor (2 args) called!");
+        name = n;
+        age = a;
+        dept = "Not Assigned";
+    }
+
+    // 3. Parameterized constructor (with 3 parameters) → Overloaded
+    public Student(String n, int a, String d) {
+        System.out.println("Parameterized constructor (3 args) called!");
+        name = n;
+        age = a;
+        dept = d;
+    }
+
+    // 4. Copy constructor (user-defined)
+    public Student(Student s) {
+        System.out.println("Copy constructor called!");
+        this.name = s.name;
+        this.age = s.age;
+        this.dept = s.dept;
+    }
+
+    // Method to display values
+    public void display() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Dept: " + dept);
+    }
+}
+
+// Main class
+public class ConstructorTypesDemo {
+    public static void main(String[] args) {
+        // Using no-argument constructor
+        Student s1 = new Student();
+        s1.display();
+
+        // Using parameterized constructor (2 args)
+        Student s2 = new Student("Karthik", 20);
+        s2.display();
+
+        // Using parameterized constructor (3 args) → Constructor overloading
+        Student s3 = new Student("Suresh", 21, "ECE");
+        s3.display();
+
+        // Using copy constructor
+        Student s4 = new Student(s3);
+        s4.display();
+    }
+}
